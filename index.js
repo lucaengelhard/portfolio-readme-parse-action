@@ -1,13 +1,20 @@
 const core = require("@actions/core");
-const github = require("@actions/github");
+const fs = require("fs");
 
-let md;
+run();
 
-try {
-  md = replaceHeadings(md);
-  md = replaceImportant(md);
-} catch (error) {
-  core.setFailed(error.message);
+function run() {
+  try {
+    const filePath = core.getInput("path");
+    let md = fs.readFileSync(filePath, "utf-8");
+
+    md = replaceHeadings(md);
+    md = replaceImportant(md);
+
+    core.setOutput("markdown", md);
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
 
 function replaceHeadings(toParse) {

@@ -1,8 +1,8 @@
 name: "Portfolio Readme Parser"
 description: "Take an .md input and output a .md string with the desired elements"
 inputs:
-  markdown:
-    description: "the input string"
+  path:
+    description: "the input path"
     required: true
 outputs:
   markdown:
