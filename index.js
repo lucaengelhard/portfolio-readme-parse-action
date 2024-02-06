@@ -11,6 +11,7 @@ function run() {
     md = replaceHeadings(md);
     md = replaceImportant(md);
 
+    core.info(md);
     core.setOutput("markdown", md);
   } catch (error) {
     core.setFailed(error.message);
