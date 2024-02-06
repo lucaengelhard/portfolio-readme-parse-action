@@ -12,10 +12,21 @@ function run() {
     md = replaceImportant(md);
 
     core.info(md);
-    core.setOutput("markdown", cleanStringForBash(md));
+    core.setOutput("markdown", cleanStringForBash(createHead(md)));
   } catch (error) {
     core.setFailed(error.message);
   }
+}
+
+function createHead(toParse) {
+  const head = `---
+title: ${core.getInput("title")}
+thumbnail: ""
+---
+
+  `;
+
+  return head.concat(toParse);
 }
 
 function cleanStringForBash(inputString) {
