@@ -26,6 +26,8 @@ thumbnail: "${core.getInput("thumbnail").trim()}"
 
 ${createTags()}
 
+---
+
   `;
 
   return head.concat(toParse);
