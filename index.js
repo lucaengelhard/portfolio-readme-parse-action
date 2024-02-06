@@ -21,12 +21,26 @@ function run() {
 function createHead(toParse) {
   const head = `---
 title: "${core.getInput("title")}"
-thumbnail: ""
+thumbnail: "${core.getInput("thumbnail")}"
 ---
+
+${createTags()}
 
   `;
 
   return head.concat(toParse);
+}
+
+function createTags() {
+  const tags = core.getInput("tags");
+  const tagArray = tags.split(",");
+  let stringArray = [];
+
+  tagArray.forEach((tag) => {
+    stringArray.push(`:wordWave{text="${tag}" link="false"}`);
+  });
+
+  return stringArray.join("\n");
 }
 
 function cleanStringForBash(inputString) {

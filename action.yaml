@@ -7,6 +7,12 @@ inputs:
   path:
     description: "the input path"
     required: true
+  tags:
+    description: "Tags that should be displayed on the page"
+    tags: "github"
+  thumbnail:
+    description: "Thumbnail of the project"
+    default: "images/code.png"
 outputs:
   markdown:
     description: "the output string"
