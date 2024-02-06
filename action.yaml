@@ -1,0 +1,12 @@
+name: "Portfolio Readme Parser"
+description: "Take an .md input and output a .md string with the desired elements"
+inputs:
+  markdown:
+    description: "the input string"
+    required: true
+outputs:
+  markdown:
+    description: "the output string"
+runs:
+  using: "node20"
+  main: "index.js"
