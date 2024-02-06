@@ -3,6 +3,7 @@ description: "Take an .md input and output a .md string with the desired element
 inputs:
   title:
     description: "the title the file should have"
+    required: true
   path:
     description: "the input path"
     required: true

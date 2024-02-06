@@ -20,7 +20,7 @@ function run() {
 
 function createHead(toParse) {
   const head = `---
-title: ${core.getInput("title")}
+title: "${core.getInput("title")}"
 thumbnail: ""
 ---
 
