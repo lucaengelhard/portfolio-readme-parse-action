@@ -20,8 +20,8 @@ function run() {
 
 function createHead(toParse) {
   const head = `---
-title: "${core.getInput("title")}"
-thumbnail: "${core.getInput("thumbnail")}"
+title: "${core.getInput("title").trim()}"
+thumbnail: "${core.getInput("thumbnail").trim()}"
 ---
 
 ${createTags()}
@@ -37,7 +37,7 @@ function createTags() {
   let stringArray = [];
 
   tagArray.forEach((tag) => {
-    stringArray.push(`:wordWave{text="${tag}" link="false"}`);
+    stringArray.push(`:wordWave{text="${tag.trim()}" link="false"}`);
   });
 
   return stringArray.join("\n");
@@ -60,7 +60,7 @@ function replaceHeadings(toParse) {
 
       toParse = toParse.replace(
         element,
-        `:wordWave{text="${elementText}" link="false"}`
+        `:wordWave{text="${elementText.trim()}" link="false"}`
       );
     });
   }
