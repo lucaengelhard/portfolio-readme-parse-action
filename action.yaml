@@ -1,6 +1,9 @@
 name: "Portfolio Readme Parser"
 description: "Take an .md input and output a .md string with the desired elements"
 inputs:
+  token:
+    description: "Token for the output Repo"
+    required: true
   path:
     description: "the input path"
     required: true

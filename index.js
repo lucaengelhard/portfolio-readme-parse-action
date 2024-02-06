@@ -12,10 +12,16 @@ function run() {
     md = replaceImportant(md);
 
     core.info(md);
-    core.setOutput("markdown", md);
+    core.setOutput("markdown", cleanStringForBash(md));
   } catch (error) {
     core.setFailed(error.message);
   }
+}
+
+function cleanStringForBash(inputString) {
+  // Escape single quotes, double quotes, and backticks
+  const cleanedString = inputString.replace(/(['"`])/g, "\\$1");
+  return cleanedString;
 }
 
 function replaceHeadings(toParse) {
