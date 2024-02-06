@@ -13,6 +13,9 @@ inputs:
   thumbnail:
     description: "Thumbnail of the project"
     default: "images/code.png"
+  order:
+    description: "Position the Post should be in"
+    default: 0
 outputs:
   markdown:
     description: "the output string"

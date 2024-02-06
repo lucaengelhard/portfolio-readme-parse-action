@@ -22,6 +22,7 @@ function createHead(toParse) {
   const head = `---
 title: "${core.getInput("title").trim()}"
 thumbnail: "${core.getInput("thumbnail").trim()}"
+order: ${core.getInput("order").trim()}
 ---
 
 ${createTags()}
